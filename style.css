@@ -1,0 +1,246 @@
+/* Değişkenler */
+:root {
+    --primary-color: #1a1d24;
+    --secondary-color: #252934;
+    --accent-color: #00ADB5;
+    --text-color: #EEEEEE;
+    --text-secondary-color: #a9a9a9;
+    --danger-color: #D72323;
+    --success-color: #28a745;
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Genel Sayfa Ayarları */
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--primary-color);
+  color: var(--text-color);
+  margin: 0;
+}
+
+body.app-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Ana Konteyner */
+.container {
+  background-color: var(--secondary-color);
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid var(--border-color);
+}
+
+/* Geri Butonu (Hesap Makinesinden Alındı) */
+.back-to-home-btn {
+    position: fixed; top: 20px; left: 20px; z-index: 100;
+    display: grid; place-items: center; width: 45px; height: 45px;
+    background-color: var(--secondary-color); color: var(--text-color);
+    border-radius: 50%; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-size: 1.2rem; text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.back-to-home-btn:hover {
+    transform: scale(1.1); background-color: var(--accent-color);
+}
+
+
+/* Başlık Bölümü */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.header-text h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.header-text p {
+  margin: 5px 0 0;
+  color: var(--text-secondary-color);
+  font-size: 0.9rem;
+}
+.clear-btn {
+  background: none;
+  border: 1px solid var(--danger-color);
+  color: var(--danger-color);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.clear-btn:hover {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+/* Görev Giriş Alanı */
+.input-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.input-section .fa-plus {
+  position: absolute;
+  left: 15px;
+  color: var(--text-secondary-color);
+}
+#todoInput {
+  width: 100%;
+  padding: 14px 15px 14px 40px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+#todoInput:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 15px rgba(0, 173, 181, 0.2);
+}
+
+/* Ayırıcı Çizgi */
+.separator {
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 25px 0;
+}
+
+/* Filtreler Bölümü */
+.filter-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 0 5px;
+  color: var(--text-secondary-color);
+  font-size: 0.9rem;
+}
+.filters {
+  display: flex;
+  gap: 5px;
+  background-color: var(--primary-color);
+  padding: 5px;
+  border-radius: 8px;
+}
+.filters button {
+  background: none;
+  border: none;
+  color: var(--text-secondary-color);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+.filters button:hover {
+  color: var(--text-color);
+}
+.filters button.active {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Görev Listesi */
+#todoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 35vh;
+  overflow-y: auto;
+}
+
+/* Görev (li) */
+li {
+  display: flex;
+  align-items: center;
+  padding: 12px 5px;
+  border-bottom: 1px solid var(--border-color);
+  transition: opacity 0.3s ease;
+}
+.task-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-grow: 1;
+  cursor: pointer;
+}
+.task-text {
+  transition: all 0.3s ease;
+}
+.delete-btn {
+  background: none; border: none;
+  color: var(--text-secondary-color);
+  cursor: pointer; font-size: 1rem;
+  padding: 8px; border-radius: 50%;
+  transition: all 0.2s ease;
+  margin-left: auto;
+}
+.delete-btn:hover {
+  color: var(--danger-color);
+  background-color: rgba(215, 35, 35, 0.1);
+}
+
+/* Özel Checkbox */
+.custom-checkbox {
+  min-width: 22px; height: 22px;
+  border: 2px solid var(--text-secondary-color);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: all 0.2s ease;
+}
+.custom-checkbox .fa-check {
+  font-size: 0.8rem;
+  color: white;
+  transform: scale(0);
+  transition: transform 0.2s ease-out;
+}
+
+/* Tamamlanan Görevler */
+li.completed .custom-checkbox {
+  background-color: var(--success-color);
+  border-color: var(--success-color);
+}
+li.completed .custom-checkbox .fa-check {
+  transform: scale(1);
+}
+li.completed .task-text {
+  text-decoration: line-through;
+  color: var(--text-secondary-color);
+}
+
+/* Liste Boş Durumu */
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-secondary-color);
+}
+.empty-state .fas {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  opacity: 0.5;
+}
+.empty-state p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+.empty-state span {
+    font-size: 0.9rem;
+}
+
+.hidden { display: none; }

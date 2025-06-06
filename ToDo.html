@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taskify - App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="app-body">
+
+  <!-- Ana Sayfaya Dön Butonu -->
+  <a href="index.html" class="back-to-home-btn" title="Go to Homepage">
+      <i class="fas fa-arrow-left"></i>
+  </a>
+
+  <div class="container">
+    <header class="app-header">
+      <div class="header-text">
+        <h1>Today's Tasks</h1>
+        <p id="currentDate"></p>
+      </div>
+      <button id="clearCompletedBtn" class="clear-btn" title="Clear All Completed Tasks">Clear Completed</button>
+    </header>
+
+    <div class="input-section">
+      <i class="fas fa-plus"></i>
+      <input id="todoInput" type="text" placeholder="Add a new task..." />
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="filter-section">
+      <div class="filters">
+        <button onclick="filterTodos('all')" class="active">All</button>
+        <button onclick="filterTodos('active')">Active</button>
+        <button onclick="filterTodos('completed')">Completed</button>
+      </div>
+      <span id="taskCount">0 tasks remaining</span>
+    </div>
+
+    <ul id="todoList"></ul>
+
+    <div id="emptyState" class="empty-state hidden">
+        <i class="fas fa-tasks"></i>
+        <p>Your list is clear!</p>
+        <span>Add a new task above to get started.</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
